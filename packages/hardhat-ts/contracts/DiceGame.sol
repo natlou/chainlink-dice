@@ -5,6 +5,7 @@ import "hardhat/console.sol";
 
 contract DiceGame {
 
+    //  The nonce is the number that blockchain miners are solving to receive the block reward.
     uint256 public nonce = 0;
     uint256 public prize = 0;
 
