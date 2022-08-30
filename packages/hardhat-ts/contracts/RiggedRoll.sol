@@ -17,7 +17,12 @@ contract RiggedRoll is Ownable {
 
   //Add riggedRoll() function to predict the randomness in the DiceGame contract and only roll when it's going to be a winner
   function riggedRoll() public {
-    
+
+    uint256 nonce = diceGame.nonce();
+    bytes32 prevHash = blockhash(block.number - 1);
+    bytes32 hash = keccak256(abi.encodePacked(prevHash, address(this), nonce)); 
+    uint256 roll = uint256(hash) % 16;
+
   }
   //Add receive() function so contract can receive Eth
   receive() external payable {  }
