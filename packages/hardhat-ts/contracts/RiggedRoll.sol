@@ -23,6 +23,9 @@ contract RiggedRoll is Ownable {
     bytes32 hash = keccak256(abi.encodePacked(prevHash, address(this), nonce)); 
     uint256 roll = uint256(hash) % 16;
 
+    if (roll > 2 ) {
+      return;
+    }
   }
   //Add receive() function so contract can receive Eth
   receive() external payable {  }

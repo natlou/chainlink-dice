@@ -41,8 +41,8 @@ contract DiceGame {
         emit Roll(msg.sender, roll);
 
         // ends contract call if player doesnt win 
-        if (roll > 2 ) {
-            return;
+        if (roll <= 2 ) {
+            rollTheDice();
         }
 
         // otherwise send the player the prize
