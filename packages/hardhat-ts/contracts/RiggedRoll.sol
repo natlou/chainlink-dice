@@ -24,8 +24,10 @@ contract RiggedRoll is Ownable {
     uint256 roll = uint256(hash) % 16;
 
     if (roll > 2 ) {
-      return;
+      uint256 ethToSend = 0.002 * (10 ** 18);
+      diceGame.rollTheDice{value: ethToSend}();
     }
+    
   }
   //Add receive() function so contract can receive Eth
   receive() external payable {  }
