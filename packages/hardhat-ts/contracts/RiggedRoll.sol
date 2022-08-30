@@ -17,4 +17,6 @@ contract RiggedRoll is Ownable {
   //Add riggedRoll() function to predict the randomness in the DiceGame contract and only roll when it's going to be a winner
 
   //Add receive() function so contract can receive Eth
+  receive() external payable {  }
+  
 }
