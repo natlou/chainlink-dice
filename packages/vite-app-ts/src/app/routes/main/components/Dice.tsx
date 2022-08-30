@@ -83,7 +83,7 @@ export const Dice: FC<DiceProps> = (props) => {
     }
   };
 
-  /*
+
   const riggedRoll = async () => {
     if (!tx) {
       return;
@@ -119,7 +119,7 @@ export const Dice: FC<DiceProps> = (props) => {
       setDiceRolled(false);
     }
   });
-  */
+
 
   const filter = diceGameContractRead?.filters.Roll(ethersContext.account, null);
 
